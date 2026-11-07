@@ -1,52 +1,893 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Francis Miguel Nunez — Executive Support, Operations and Digital Administration.">
-  <title>Francis Miguel Nunez — Executive Support & Operations</title>
+  <meta name="description" content="Francis Miguel Nunez | Shopify, E-commerce Operations, Virtual Assistance, Customer Support and Web Administration. Remote support for UK and international businesses. Starting at $5/hour.">
+  <meta name="theme-color" content="#f6f4ef">
+  <title>Francis Miguel Nunez | E-commerce & Virtual Support Specialist</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root {
+      --cream: #f6f4ef;
+      --paper: #fffefa;
+      --ink: #202720;
+      --muted: #777c73;
+      --green: #455b48;
+      --sage: #e5eae1;
+      --line: #dcdfd7;
+      --gold: #ab8c55;
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --mono: "DM Mono", monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    ::selection { background: #c9d9c6; color: var(--ink); }
+
+    .topline { height: 5px; background: var(--green); }
+
+    .nav {
+      height: 82px;
+      max-width: 1440px;
+      margin: auto;
+      padding: 0 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 20;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 30px;
+      letter-spacing: -2px;
+      flex-shrink: 0;
+    }
+
+    .brand span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      color: #5d645c;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--ink);
+      color: white;
+      padding: 13px 20px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background .2s;
+    }
+
+    .nav-cta:hover { background: var(--green); }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      color: var(--ink);
+      cursor: pointer;
+      font-family: var(--sans);
+    }
+
+    .section {
+      max-width: 1440px;
+      margin: auto;
+      padding: 100px 6%;
+    }
+
+    .section-index, .kicker, .eyebrow, .micro,
+    .exp-meta, .exp-number, .tags, .tool-group > span {
+      font-family: var(--mono);
+      letter-spacing: 1.3px;
+      font-size: 10px;
+    }
+
+    .section-index {
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      margin-bottom: 65px;
+    }
+
+    .kicker {
+      color: var(--green);
+      font-weight: 500;
+      margin: 0 0 20px;
+    }
+
+    h1, h2, h3, h4, p { margin-top: 0; }
+
+    h1, h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: -.035em;
+    }
+
+    h1 em, h2 em {
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    .section-heading { max-width: 780px; margin-bottom: 55px; }
+
+    .section-heading h2 {
+      font-size: clamp(38px, 5vw, 70px);
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 1440px;
+      margin: auto;
+      padding: 85px 6% 100px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(310px, .75fr);
+      gap: 70px;
+      align-items: center;
+      min-height: 690px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.8;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #6c946f;
+      box-shadow: 0 0 0 5px #e1e9de;
+    }
+
+    h1 {
+      font-size: clamp(62px, 7.3vw, 112px);
+      line-height: .98;
+      margin: 30px 0 30px;
+    }
+
+    h1 .small-line {
+      font-size: .58em;
+      display: block;
+      line-height: 1.35;
+      letter-spacing: -.025em;
+    }
+
+    .hero-lede {
+      max-width: 530px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #626960;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      gap: 35px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 17px 24px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 3px;
+      transition: transform .2s, background .2s;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button-dark { background: var(--ink); color: white; }
+    .button-dark:hover { background: var(--green); }
+
+    .text-link {
+      font-size: 12px;
+      font-weight: 700;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .hero-note {
+      margin-top: 28px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 10px;
+      line-height: 1.9;
+      letter-spacing: .4px;
+    }
+
+    .portrait-wrap { width: 100%; min-width: 0; }
+
+    .portrait-frame {
+      position: relative;
+      height: 470px;
+      background: #dde1d7;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      filter: saturate(.75);
+    }
+
+    .portrait-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(31,43,31,.15), transparent 50%);
+      pointer-events: none;
+    }
+
+    .portrait-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      padding-top: 22px;
+      border-top: 1px solid var(--ink);
+      margin-top: 8px;
+    }
+
+    .portrait-caption strong {
+      display: block;
+      font-size: 12px;
+      letter-spacing: .5px;
+      margin-top: 7px;
+    }
+
+    .micro { color: var(--muted); }
+
+    .caption-meta {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 9px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* TICKER */
+    .marquee {
+      overflow: hidden;
+      background: var(--green);
+      color: #f2f4ed;
+      padding: 22px 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: scroll 38s linear infinite;
+    }
+
+    .marquee-track span {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+    }
+
+    .marquee-track b {
+      color: #b5c9af;
+      font-size: 14px;
+      padding: 0 38px;
+    }
+
+    @keyframes scroll {
+      to { transform: translateX(-50%); }
+    }
+
+    /* PROFILE */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10%;
+    }
+
+    .statement h2 {
+      font-size: clamp(38px, 5vw, 70px);
+      line-height: 1.13;
+      margin: 0;
+    }
+
+    .profile-text p {
+      font-size: 15px;
+      color: #616860;
+      line-height: 2;
+      margin-bottom: 22px;
+    }
+
+    .credentials {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 30px;
+    }
+
+    .credentials span, .credentials small {
+      display: block;
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .credentials span {
+      font-family: var(--mono);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .credentials strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    /* SERVICES */
+    .services { background: var(--paper); max-width: none; }
+
+    .services-inner {
+      max-width: 1267px;
+      margin: auto;
+    }
+
+    .services .section-index { margin-bottom: 65px; }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .service-card {
+      padding: 34px 30px;
+      min-height: 315px;
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      transition: background .25s, transform .25s;
+    }
+
+    .service-card:hover {
+      background: var(--sage);
+      transform: translateY(-3px);
+    }
+
+    .service-card .number {
+      color: var(--gold);
+      font: 11px var(--mono);
+      margin-bottom: 36px;
+    }
+
+    .service-card h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 27px;
+      line-height: 1.18;
+      margin-bottom: 18px;
+    }
+
+    .service-card p {
+      color: #687066;
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+      padding-top: 18px;
+    }
+
+    .mini-tags span {
+      font: 9px var(--mono);
+      border: 1px solid #d6dbd3;
+      padding: 7px 9px;
+      color: #566451;
+    }
+
+    .service-card.featured {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .service-card.featured p,
+    .service-card.featured .number { color: #d2ddcf; }
+
+    .service-card.featured .mini-tags span {
+      border-color: #7a8e79;
+      color: #f1f5ec;
+    }
+
+    .service-card.featured:hover { background: #344737; }
+
+    /* EXPERIENCE */
+    .experience-card {
+      display: grid;
+      grid-template-columns: 75px minmax(0, 1fr) 155px;
+      gap: 24px;
+      padding: 38px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-card:last-child { border-bottom: 1px solid var(--line); }
+
+    .exp-number { color: var(--gold); padding-top: 5px; }
+    .exp-meta { color: var(--muted); margin-bottom: 18px; }
+
+    .exp-main h3 {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .exp-main h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .exp-main p {
+      font-size: 13px;
+      max-width: 740px;
+      color: #687066;
+      line-height: 1.9;
+    }
+
+    .exp-side {
+      font: 10px/1.8 var(--mono);
+      text-align: right;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 23px;
+    }
+
+    .tags span {
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      color: var(--green);
+      font-size: 9px;
+    }
+
+    /* WORK STYLE */
+    .approach {
+      max-width: none;
+      background: var(--sage);
+    }
+
+    .approach-inner { max-width: 1267px; margin: auto; }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .approach-item {
+      border-top: 1px solid #bcc8b9;
+      padding-top: 28px;
+    }
+
+    .approach-item .number {
+      font: 11px var(--mono);
+      color: var(--green);
+    }
+
+    .approach-item h3 {
+      font: 30px/1.2 var(--serif);
+      margin: 28px 0 14px;
+    }
+
+    .approach-item p {
+      font-size: 13px;
+      color: #5e6b5d;
+      line-height: 1.9;
+    }
+
+    /* TOOLKIT */
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 11%;
+    }
+
+    .tool-group {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tool-group:first-child { border-top: 1px solid var(--line); }
+
+    .tool-group > span {
+      color: var(--muted);
+      padding-top: 4px;
+      line-height: 1.7;
+    }
+
+    .tool-group strong {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    /* AVAILABILITY */
+    .availability {
+      max-width: none;
+      background: #eaece5;
+    }
+
+    .availability-inner {
+      max-width: 1267px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 10%;
+    }
+
+    .availability h2 {
+      font-size: clamp(40px, 5vw, 69px);
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .availability-copy {
+      font-size: 14px;
+      line-height: 1.95;
+      color: #647063;
+      max-width: 500px;
+    }
+
+    .rate-panel {
+      padding: 48px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .rate-label {
+      font: 10px var(--mono);
+      letter-spacing: 1.3px;
+      color: var(--muted);
+    }
+
+    .rate-value {
+      font-family: var(--serif);
+      font-size: clamp(65px, 7vw, 105px);
+      letter-spacing: -4px;
+      line-height: 1.3;
+      color: var(--green);
+    }
+
+    .rate-value span {
+      font-family: var(--sans);
+      font-size: 15px;
+      letter-spacing: 0;
+      color: var(--muted);
+    }
+
+    .rate-panel > p {
+      color: #6a7168;
+      font-size: 12px;
+      line-height: 1.8;
+      margin: 0 0 22px;
+    }
+
+    .availability-points {
+      border-top: 1px solid var(--line);
+      margin: 28px 0;
+      padding-top: 22px;
+    }
+
+    .availability-points div {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #465348;
+    }
+
+    .availability-points b { color: #668b69; }
+
+    .rate-panel .button { width: 100%; }
+
+    /* CONTACT */
+    .contact {
+      background: var(--ink);
+      color: white;
+      max-width: none;
+      padding-bottom: 30px;
+    }
+
+    .contact-inner {
+      max-width: 1267px;
+      margin: 0 auto;
+      padding: 40px 0 100px;
+    }
+
+    .contact .kicker { color: #b4c9af; }
+
+    .contact h2 {
+      max-width: 920px;
+      font-size: clamp(48px, 7vw, 95px);
+      line-height: 1.07;
+      margin-bottom: 30px;
+    }
+
+    .contact h2 em { color: #afc3a8; }
+
+    .contact-inner > p:not(.kicker) {
+      max-width: 570px;
+      color: #bcc6ba;
+      line-height: 1.9;
+      font-size: 15px;
+      margin-bottom: 45px;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 24px;
+      font-family: var(--serif);
+      font-size: clamp(19px, 3.6vw, 42px);
+      border-bottom: 1px solid #899a87;
+      padding-bottom: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-email:hover { color: #bbd1b8; }
+
+    .contact-footer {
+      max-width: 1267px;
+      margin: 0 auto;
+      padding-top: 28px;
+      border-top: 1px solid #475148;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      font: 9px var(--mono);
+      letter-spacing: 1px;
+      color: #aab8a7;
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 11px; }
+      .hero { gap: 35px; }
+      .portrait-frame { height: 410px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .toolkit-grid { gap: 6%; }
+    }
+
+    @media (max-width: 760px) {
+      .nav { height: 70px; padding: 0 5%; }
+
+      .menu-toggle { display: inline-block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1px solid var(--line);
+        padding: 24px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 21px;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 14px; }
+      .nav-cta { display: none; }
+
+      .section { padding: 75px 5%; }
+      .section-index { margin-bottom: 42px; }
+      .section-heading { margin-bottom: 38px; }
+
+      .hero {
+        padding: 70px 5%;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        min-height: 0;
+      }
+
+      h1 { font-size: clamp(62px, 12vw, 94px); }
+
+      .portrait-wrap { max-width: 470px; }
+      .portrait-frame { height: 440px; }
+
+      .profile-grid, .toolkit-grid,
+      .availability-inner { grid-template-columns: 1fr; gap: 35px; }
+
+      .service-grid, .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .service-card { min-height: 270px; }
+      .approach-grid { gap: 32px; }
+
+      .experience-card {
+        grid-template-columns: 35px 1fr;
+        gap: 14px;
+      }
+
+      .exp-side { display: none; }
+      .exp-main h3 { font-size: 32px; }
+
+      .availability-inner { gap: 35px; }
+      .rate-panel { padding: 32px 25px; }
+
+      .contact-inner { padding: 15px 0 80px; }
+      .contact h2 { font-size: clamp(46px, 10vw, 75px); }
+    }
+
+    @media (max-width: 420px) {
+      .eyebrow { font-size: 9px; }
+      h1 { font-size: 59px; }
+      .hero-lede { font-size: 14px; }
+      .hero-actions { gap: 20px; }
+      .portrait-frame { height: 350px; }
+      .credentials { grid-template-columns: 1fr; }
+      .tool-group { grid-template-columns: 1fr; gap: 7px; }
+      .contact-email { font-size: 18px; }
+      .contact-footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .marquee-track { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .button, .service-card { transition: none; }
+    }
+  </style>
 </head>
+
 <body>
   <div class="topline"></div>
 
   <header class="nav">
-    <a class="brand" href="#top">FN<span>.</span></a>
-    <nav>
+    <a class="brand" href="#top" aria-label="Francis Miguel Nunez home">FN<span>.</span></a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
       <a href="#profile">Profile</a>
+      <a href="#services">Services</a>
       <a href="#experience">Experience</a>
-      <a href="#capabilities">Capabilities</a>
+      <a href="#approach">Approach</a>
       <a href="#toolkit">Toolkit</a>
+      <a href="#availability">Rates</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a class="nav-cta" href="#contact">Let's talk <span>↗</span></a>
+
+    <a class="nav-cta" href="#contact">Let's talk ↗</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
   </header>
 
   <main id="top">
+
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="dot"></span> EXECUTIVE SUPPORT / OPERATIONS / DIGITAL ADMINISTRATION</div>
-        <h1>Quietly<br><em>capable.</em><br>Precisely <span>present.</span></h1>
+        <div class="eyebrow"><span class="dot"></span> E-COMMERCE / VIRTUAL ASSISTANCE / DIGITAL OPERATIONS</div>
+
+        <h1>
+          Reliable.<br>
+          <em>Resourceful.</em>
+          <span class="small-line">Ready to get things done.</span>
+        </h1>
+
         <p class="hero-lede">
-          Supporting executives, teams, clients, and business operations with organization,
-          clear communication, dependable follow-through, and digital fluency.
+          Helping UK and international businesses stay organised, support customers,
+          manage e-commerce operations, and keep digital workflows running smoothly.
+          From Shopify and order management to quality assurance and web administration,
+          I provide dependable support that lets you focus on growing your business.
         </p>
+
         <div class="hero-actions">
-          <a class="button button-dark" href="#experience">View experience <span>↓</span></a>
-          <a class="text-link" href="#contact">Get in touch <span>↗</span></a>
+          <a class="button button-dark" href="#services">Explore my services <span>↓</span></a>
+          <a class="text-link" href="#contact">Let's work together ↗</a>
+        </div>
+
+        <div class="hero-note">
+          PHILIPPINES-BASED · UK CLIENTS WELCOME · FROM US$5/HOUR<br>
+          PART-TIME AVAILABILITY · OPEN TO FULL-TIME ARRANGEMENTS
         </div>
       </div>
 
       <div class="portrait-wrap reveal">
-                <div class="portrait-frame">
-          <img src="profile.jpg" alt="Francis Miguel Nunez">
+        <div class="portrait-frame">
+          <img src="profile.jpg" alt="Portrait of Francis Miguel Nunez">
           <div class="portrait-overlay"></div>
         </div>
+
         <div class="portrait-caption">
           <div>
-            <span class="micro">PROFILE</span>
+            <span class="micro">YOUR REMOTE SUPPORT PARTNER</span>
             <strong>FRANCIS MIGUEL NUNEZ</strong>
           </div>
           <div class="caption-meta">PHILIPPINES<br>REMOTE-READY</div>
@@ -54,43 +895,183 @@
       </div>
     </section>
 
-    <section class="marquee" aria-label="Core strengths">
+    <!-- STRENGTHS -->
+    <section class="marquee" aria-label="Core services">
       <div class="marquee-track">
-        <span>EXECUTIVE SUPPORT</span><b>✦</b><span>OPERATIONS</span><b>✦</b><span>CLIENT COORDINATION</span><b>✦</b><span>CRM & DATA</span><b>✦</b><span>DIGITAL SUPPORT</span><b>✦</b>
-        <span>EXECUTIVE SUPPORT</span><b>✦</b><span>OPERATIONS</span><b>✦</b><span>CLIENT COORDINATION</span><b>✦</b><span>CRM & DATA</span><b>✦</b><span>DIGITAL SUPPORT</span><b>✦</b>
+        <span>SHOPIFY SUPPORT</span><b>✦</b>
+        <span>ORDER MANAGEMENT</span><b>✦</b>
+        <span>VIRTUAL ASSISTANCE</span><b>✦</b>
+        <span>CUSTOMER SUPPORT</span><b>✦</b>
+        <span>QUALITY ASSURANCE</span><b>✦</b>
+        <span>WEBSITE MANAGEMENT</span><b>✦</b>
+        <span>SHOPIFY SUPPORT</span><b>✦</b>
+        <span>ORDER MANAGEMENT</span><b>✦</b>
+        <span>VIRTUAL ASSISTANCE</span><b>✦</b>
+        <span>CUSTOMER SUPPORT</span><b>✦</b>
+        <span>QUALITY ASSURANCE</span><b>✦</b>
+        <span>WEBSITE MANAGEMENT</span><b>✦</b>
       </div>
     </section>
 
+    <!-- PROFILE -->
     <section class="profile section" id="profile">
       <div class="section-index">01 / PROFILE</div>
+
       <div class="profile-grid">
         <div class="statement reveal">
-          <p class="kicker">THE ROLE I PLAY</p>
-          <h2>The person behind the <em>details</em> that keep work moving.</h2>
+          <p class="kicker">A LITTLE ABOUT ME</p>
+          <h2>The support behind the <em>details</em> that keep businesses moving.</h2>
         </div>
+
         <div class="profile-text reveal">
           <p>
-            My background combines customer-facing support with operational coordination,
-            virtual assistance, CRM and data work, lead generation, web support, and quality assurance.
+            I'm Francis, a Philippines-based remote professional with experience
+            in customer service, e-commerce operations, virtual assistance,
+            quality assurance, CRM, research, and website administration.
           </p>
+
           <p>
-            I work comfortably across structured processes and fast-moving digital environments,
-            adapting to new tools, workflows, and client requirements while keeping communication and
-            records organized.
+            I've worked with different business processes and digital systems,
+            including Shopify, 57Track, EU e-commerce operations, order management,
+            and website platforms such as Wix, Squarespace, and GoDaddy.
           </p>
+
+          <p>
+            I enjoy solving problems, learning new tools, and turning clear instructions
+            into completed work. I don't need to know every platform on day one.
+            Give me the objective, the necessary details, and access to the right resources,
+            and I'll work towards finding a practical solution.
+          </p>
+
+          <p>
+            I'm particularly interested in building a long-term working relationship
+            with a serious UK-based client who needs consistent, flexible support.
+          </p>
+
           <div class="credentials">
-            <div><span>EDUCATION</span><strong>BA Political Science</strong><small>Adamson University · 2021–2025</small></div>
-            <div><span>ENGLISH</span><strong>Versant C2</strong><small>Professional communication</small></div>
+            <div>
+              <span>EDUCATION</span>
+              <strong>BA Political Science</strong>
+              <small>Adamson University · 2021–2025</small>
+            </div>
+            <div>
+              <span>ENGLISH PROFICIENCY</span>
+              <strong>Versant C2</strong>
+              <small>Professional English communication</small>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- SERVICES -->
+    <section class="services section" id="services">
+      <div class="services-inner">
+        <div class="section-index">02 / SERVICES</div>
+
+        <div class="section-heading reveal">
+          <p class="kicker">HOW I CAN HELP</p>
+          <h2>Practical support for <em>real business needs.</em></h2>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card featured reveal">
+            <span class="number">01 / CORE SPECIALITY</span>
+            <h3>Shopify & E-commerce Operations</h3>
+            <p>
+              Support with Shopify store administration, product information,
+              collections, order workflows, tracking updates, customer enquiries,
+              and day-to-day e-commerce tasks. Experience with 57Track and
+              EU e-commerce processes.
+            </p>
+            <div class="mini-tags">
+              <span>SHOPIFY</span><span>57TRACK</span>
+              <span>ORDERS</span><span>EU E-COMMERCE</span>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="number">02</span>
+            <h3>General Virtual & Business Support</h3>
+            <p>
+              Flexible support for recurring administrative tasks, research,
+              coordination, data handling, inbox organisation, documentation,
+              follow-ups, and new workflows based on your business needs.
+            </p>
+            <div class="mini-tags">
+              <span>VIRTUAL ASSISTANCE</span><span>RESEARCH</span>
+              <span>COORDINATION</span>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="number">03</span>
+            <h3>Customer Support</h3>
+            <p>
+              Professional written customer support through email and chat,
+              handling enquiries, order concerns, account issues,
+              follow-ups, and accurate CRM documentation.
+            </p>
+            <div class="mini-tags">
+              <span>EMAIL</span><span>CHAT</span>
+              <span>CRM</span><span>RESOLUTION</span>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="number">04</span>
+            <h3>Social Media & Content Support</h3>
+            <p>
+              Assistance with content scheduling, customer messages,
+              engagement, maintaining an online presence, basic graphics,
+              and content preparation using digital tools.
+            </p>
+            <div class="mini-tags">
+              <span>CONTENT</span><span>CANVA</span>
+              <span>SCHEDULING</span><span>ENGAGEMENT</span>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="number">05</span>
+            <h3>Quality Assurance & Operations</h3>
+            <p>
+              Quality checking, scorecards, reporting, documentation,
+              data accuracy, process reviews, and operational support
+              aimed at maintaining consistent standards.
+            </p>
+            <div class="mini-tags">
+              <span>QA</span><span>REPORTS</span>
+              <span>SCORECARDS</span><span>PROCESSES</span>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="number">06</span>
+            <h3>Web Design & Digital Administration</h3>
+            <p>
+              Website design and updates using Wix, Squarespace, GoDaddy,
+              and Shopify. Support with page layouts, landing pages,
+              store content, visual assets, and basic website maintenance.
+            </p>
+            <div class="mini-tags">
+              <span>WIX</span><span>SQUARESPACE</span>
+              <span>GODADDY</span><span>WEB DESIGN</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
     <section class="experience section" id="experience">
-      <div class="section-index">02 / EXPERIENCE</div>
-      <div class="section-heading">
-        <p class="kicker">PROFESSIONAL HISTORY</p>
-        <h2>Experience built around <em>trust.</em></h2>
+      <div class="section-index">03 / EXPERIENCE</div>
+
+      <div class="section-heading reveal">
+        <p class="kicker">PROFESSIONAL BACKGROUND</p>
+        <h2>Experience built through <em>real work.</em></h2>
       </div>
 
       <article class="experience-card reveal">
@@ -99,10 +1080,17 @@
           <div class="exp-meta">JUNE 2025 — NOVEMBER 2025</div>
           <h3>Concentrix</h3>
           <h4>Advisor I — Customer Service</h4>
-          <p>Business-client calls and emails, internal coordination, supplier communication, order and purchase-request processing, credit adjustments, and accurate record maintenance.</p>
-          <div class="tags"><span>CLIENT SUPPORT</span><span>ORDERS</span><span>COORDINATION</span></div>
+          <p>
+            Handled business-client calls and emails, internal coordination,
+            supplier communication, order and purchase-request processing,
+            credit adjustments, and accurate record maintenance.
+          </p>
+          <div class="tags">
+            <span>CLIENT SUPPORT</span><span>ORDERS</span>
+            <span>COORDINATION</span><span>DOCUMENTATION</span>
+          </div>
         </div>
-        <div class="exp-side">CLIENT<br>OPERATIONS</div>
+        <div class="exp-side">BUSINESS<br>CLIENT SUPPORT</div>
       </article>
 
       <article class="experience-card reveal">
@@ -111,72 +1099,251 @@
           <div class="exp-meta">JULY 2024 — FEBRUARY 2025</div>
           <h3>Cognizant</h3>
           <h4>Process Executive — Seasonal</h4>
-          <p>Technical and billing support, account management, customer retention, upselling, stock transfers, and account-related data handling.</p>
-          <div class="tags"><span>TECHNICAL SUPPORT</span><span>BILLING</span><span>ACCOUNT MANAGEMENT</span></div>
+          <p>
+            Provided technical and billing support, account management,
+            customer retention assistance, upselling, stock transfers,
+            and accurate account-related data handling.
+          </p>
+          <div class="tags">
+            <span>TECHNICAL SUPPORT</span><span>BILLING</span>
+            <span>ACCOUNTS</span><span>RETENTION</span>
+          </div>
         </div>
         <div class="exp-side">CUSTOMER +<br>TECHNICAL SUPPORT</div>
       </article>
 
-      <article class="experience-card featured reveal">
+      <article class="experience-card reveal">
         <div class="exp-number">03</div>
         <div class="exp-main">
           <div class="exp-meta">JUNE 2021 — OCTOBER 2024</div>
           <h3>Digitize Services</h3>
-          <h4>QA Manager · Virtual Assistant · Web Support · BDR · Lead Generation</h4>
-          <p>Quality assurance, CRM and lead-generation workflows, online research, landing pages, website management, reporting, process improvements, podcast publishing, and administrative coordination.</p>
-          <div class="tags"><span>QA</span><span>CRM</span><span>WEB</span><span>LEAD GEN</span><span>REPORTING</span></div>
+          <h4>Quality Assurance Associate · Virtual Assistant · Digital Support</h4>
+          <p>
+            Experience across quality assurance activities, quality checks,
+            reporting, CRM administration, lead generation, research,
+            administrative coordination, website management, landing pages,
+            and digital content workflows.
+          </p>
+          <div class="tags">
+            <span>QUALITY ASSURANCE</span><span>VIRTUAL ASSISTANCE</span>
+            <span>CRM</span><span>WEB SUPPORT</span>
+            <span>LEAD GENERATION</span>
+          </div>
         </div>
-        <div class="exp-side">DIGITAL<br>OPERATIONS</div>
+        <div class="exp-side">QA + DIGITAL<br>OPERATIONS</div>
       </article>
+
     </section>
 
-    <section class="capabilities section" id="capabilities">
-      <div class="section-index">03 / CAPABILITIES</div>
-      <div class="section-heading">
-        <p class="kicker">EXECUTIVE SUPPORT CAPABILITIES</p>
-        <h2>Structured support.<br><em>Human judgment.</em></h2>
-      </div>
-      <div class="cap-grid">
-        <article class="cap-card reveal"><span>01</span><h3>Administration</h3><p>Research, documentation, scheduling support, data handling, follow-up, and day-to-day coordination.</p></article>
-        <article class="cap-card reveal"><span>02</span><h3>Client & Stakeholder Support</h3><p>Email, chat and voice support, issue resolution, account concerns, vendor and internal coordination.</p></article>
-        <article class="cap-card reveal"><span>03</span><h3>Operations</h3><p>Order processing, CRM management, workflow support, quality checks, reporting, and process improvement.</p></article>
-        <article class="cap-card reveal"><span>04</span><h3>Digital Support</h3><p>Website management, landing pages, lead generation, content support, and digital platform administration.</p></article>
+    <!-- WORK APPROACH -->
+    <section class="approach section" id="approach">
+      <div class="approach-inner">
+        <div class="section-index">04 / WORKING STYLE</div>
+
+        <div class="section-heading reveal">
+          <p class="kicker">WHAT YOU CAN EXPECT</p>
+          <h2>Less hand-holding.<br><em>More follow-through.</em></h2>
+        </div>
+
+        <div class="approach-grid">
+          <div class="approach-item reveal">
+            <span class="number">01 / ADAPTABILITY</span>
+            <h3>Quick to learn.</h3>
+            <p>
+              Comfortable working with unfamiliar systems and processes.
+              I research, explore, and learn new platforms based on what
+              the role requires, rather than being limited to tools I already know.
+            </p>
+          </div>
+
+          <div class="approach-item reveal">
+            <span class="number">02 / INITIATIVE</span>
+            <h3>Solution-oriented.</h3>
+            <p>
+              With a clear objective, the right information, and appropriate
+              access, I can investigate issues, work through tasks,
+              and suggest practical next steps instead of waiting for
+              instructions at every stage.
+            </p>
+          </div>
+
+          <div class="approach-item reveal">
+            <span class="number">03 / RELIABILITY</span>
+            <h3>Clear communication.</h3>
+            <p>
+              I value accurate records, organised workflows, regular
+              communication, and dependable follow-through.
+              I flag blockers early and clarify priorities when needed.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- TOOLKIT -->
     <section class="toolkit section" id="toolkit">
-      <div class="section-index">04 / TOOLKIT</div>
+      <div class="section-index">05 / DIGITAL TOOLKIT</div>
+
       <div class="toolkit-grid">
         <div class="section-heading reveal">
-          <p class="kicker">DIGITAL TOOLKIT</p>
-          <h2>Comfortable inside the <em>systems</em> behind the work.</h2>
+          <p class="kicker">PLATFORMS & SYSTEMS</p>
+          <h2>Comfortable with the <em>tools behind the work.</em></h2>
         </div>
+
         <div class="tools reveal">
-          <div class="tool-group"><span>CRM</span><strong>HubSpot · Apollo · Zendesk · Kana</strong></div>
-          <div class="tool-group"><span>PRODUCTIVITY</span><strong>Google Workspace · Microsoft Office · Microsoft Dynamics</strong></div>
-          <div class="tool-group"><span>WORKFLOW</span><strong>Trello · Asana · Slack · Calendly</strong></div>
-          <div class="tool-group"><span>WEB</span><strong>Wix · WordPress · Squarespace · GoDaddy</strong></div>
-          <div class="tool-group"><span>CONTENT</span><strong>Canva · CapCut · Buzzsprout · KDP</strong></div>
-          <div class="tool-group"><span>NETWORKING</span><strong>Cisco CCNA · Cisco Packet Tracer · Avaya</strong></div>
+          <div class="tool-group">
+            <span>E-COMMERCE</span>
+            <strong>Shopify · 57Track · Order Management · EU E-commerce Workflows</strong>
+          </div>
+
+          <div class="tool-group">
+            <span>WEB PLATFORMS</span>
+            <strong>Wix · Squarespace · GoDaddy · WordPress</strong>
+          </div>
+
+          <div class="tool-group">
+            <span>CRM & SUPPORT</span>
+            <strong>HubSpot · Apollo · Zendesk · Kana · Microsoft Dynamics</strong>
+          </div>
+
+          <div class="tool-group">
+            <span>PRODUCTIVITY</span>
+            <strong>Google Workspace · Microsoft Office · Calendly</strong>
+          </div>
+
+          <div class="tool-group">
+            <span>PROJECT & WORKFLOW</span>
+            <strong>Trello · Slack · Asana</strong>
+          </div>
+
+          <div class="tool-group">
+            <span>CONTENT & DESIGN</span>
+            <strong>Canva · CapCut · Buzzsprout · KDP</strong>
+          </div>
+
+          <div class="tool-group">
+            <span>TECHNICAL TOOLS</span>
+            <strong>Cisco CCNA · Cisco Packet Tracer · Avaya</strong>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- AVAILABILITY & RATE -->
+    <section class="availability section" id="availability">
+      <div class="availability-inner">
+
+        <div class="reveal">
+          <p class="kicker">WORKING TOGETHER</p>
+          <h2>Flexible support.<br><em>Sensible investment.</em></h2>
+
+          <p class="availability-copy">
+            I'm looking to build a meaningful, long-term working relationship
+            with one committed client, ideally a UK-based founder,
+            online retailer, or growing business.
+          </p>
+
+          <p class="availability-copy">
+            Available for part-time work, with flexibility to discuss
+            full-time arrangements as business needs grow.
+            Working hours and UK time-zone overlap can be agreed together.
+          </p>
+        </div>
+
+        <div class="rate-panel reveal">
+          <span class="rate-label">STARTING HOURLY RATE</span>
+          <div class="rate-value">$5<span> USD / hour</span></div>
+
+          <p>
+            An accessible starting rate for ongoing remote assistance.
+            Final pricing can be discussed based on responsibilities,
+            workload, and working arrangements.
+          </p>
+
+          <div class="availability-points">
+            <div><b>✓</b> Part-time availability</div>
+            <div><b>✓</b> Open to full-time opportunities</div>
+            <div><b>✓</b> Flexible working-hour arrangements</div>
+            <div><b>✓</b> UK and international clients welcome</div>
+            <div><b>✓</b> Interested in one long-term client partnership</div>
+          </div>
+
+          <a class="button button-dark" href="mailto:nunezfrancismiguel@gmail.com?subject=Remote%20Support%20Enquiry">
+            Discuss working together <span>↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section class="contact section" id="contact">
       <div class="contact-inner reveal">
-        <p class="kicker">05 / CONTACT</p>
-        <h2>Good support should feel <em>effortless.</em></h2>
-        <p>For executive support, operations, client coordination, or digital administration, let's talk about where I can add value.</p>
-        <a class="contact-email" href="mailto:nunezfrancismiguel@gmail.com">nunezfrancismiguel@gmail.com <span>↗</span></a>
+        <p class="kicker">06 / LET'S CONNECT</p>
+
+        <h2>One reliable person.<br><em>More room to grow.</em></h2>
+
+        <p>
+          Need someone to support your Shopify store, manage customer
+          enquiries, handle administrative work, or keep digital operations
+          organised? Tell me about your business, the tasks you need covered,
+          and the support you're looking for.
+        </p>
+
+        <a class="contact-email" href="mailto:nunezfrancismiguel@gmail.com?subject=Working%20Together%20-%20Remote%20Support">
+          nunezfrancismiguel@gmail.com <span>↗</span>
+        </a>
       </div>
+
       <div class="contact-footer">
         <span>FRANCIS MIGUEL NUNEZ</span>
-        <span>EXECUTIVE SUPPORT / OPERATIONS</span>
-        <span>© 2026</span>
+        <span>ECOMMERCE / VIRTUAL SUPPORT / OPERATIONS</span>
+        <span>PHILIPPINES · REMOTE</span>
+        <span>© <span id="year">2026</span></span>
       </div>
     </section>
+
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "Close ✕" : "Menu ☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "Menu ☰";
+      });
+    });
+
+    // Scroll reveal effects
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      revealElements.forEach(element => observer.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add("visible"));
+    }
+
+    // Current footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
